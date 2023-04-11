@@ -21,7 +21,21 @@
 		<selenium.version>4.8.0</selenium.version>
 		<dockerhub.user>AnaBel9</dockerhub.user>
 	</properties>
-
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>${dockerhub.user}/${project.artifactId}:${project.version}</name>
+					</image>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
